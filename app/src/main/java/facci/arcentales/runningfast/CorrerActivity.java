@@ -42,13 +42,13 @@ public class CorrerActivity extends AppCompatActivity {
         comenzar = (TextView)findViewById(R.id.comenzar);
         floatingActionButton = (FloatingActionButton)findViewById(R.id.fab_map);
 
-       /* floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (CorrerActivity.this, MapActivity.class);
+                Intent i = new Intent (CorrerActivity.this, MapsActivity.class);
                 startActivity(i);
             }
-        });*/
+        });
 
         preferences=getSharedPreferences("preferences", Context.MODE_PRIVATE);
         progressBar.setProgress(0);
