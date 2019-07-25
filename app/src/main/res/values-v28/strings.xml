@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Running Fast</string>
+    <string name="tex_registrate">¿No tienes cuenta? Regístrate</string>
+    <string name="aqui">aquí</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="editText_usuario">Usuario</string>
+    <string name="editText_contraseña">Contraseña</string>
+    <string name="toolbar_registro">Registro</string>
+    <string name="boton_guardar_registro">Guardar</string>
+    <string name="editText_nombre">Nombre</string>
+    <string name="editText_apellidos">Apellidos</string>
+    <string name="editText_usuario_registro">Usuario</string>
+    <string name="editText_conf_contraseña">Confirmar Contraseña</string>
+    <string name="radio_masculino">Masculino</string>
+    <string name="radio_femenino">Femenino</string>
+    <string name="textView_sexo">Sexo:</string>
+    <string name="editText_email">Email</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="iniciar_conteo">Iniciar</string>
+    <string name="tiempo">Tiempo:</string>
+    <string name="distancia">Distancia</string>
+    <string name="editText_historial_vacio">Sin actividad</string>
+    <string name="toolbar_historial">Historial</string>
+    <string name="tiempo_historial">Tiempo</string>
+    <string name="tiempoEstimado_historial">Tiempo Estimado</string>
+    <string name="distancia_historial">Distancia</string>
+    <string name="distanciaRecorrida_historial">Distancia recorrida</string>
+    <string name="comenzar">Comenzar</string>
+</resources>

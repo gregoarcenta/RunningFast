@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="RicesButom" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/primary_dark</item>
+        <item name="android:colorControlHighlight">@color/primary</item>
+        <item name="android:textColor">@color/icons</item>
+    </style>
+    <style name="RicesButomIniciar" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/primary</item>
+        <item name="android:colorControlHighlight">@color/primary_dark</item>
+        <item name="android:textColor">@color/icons</item>
+        <item name="android:shape">oval</item>
+        <item name="android:width">100dp</item>
+        <item name="android:height">100dp</item>
+    </style>
+    <style name="editText_login" parent="Theme.AppCompat.Light">
+        <item name="android:textColorHint">@color/primary</item>
+        <item name="android:textColorPrimary">@color/primary</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="colorControlNormal">@color/primary</item>
+        <item name="colorControlActivated">@color/primary</item>
+    </style>
+    <style name="editText_registro" parent="Theme.AppCompat.Light">
+        <item name="android:textColorHint">@color/primary_text</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="colorAccent">@color/primary_text</item>
+        <item name="colorControlNormal">@color/primary_text</item>
+        <item name="colorControlActivated">@color/primary_text</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+</resources>
