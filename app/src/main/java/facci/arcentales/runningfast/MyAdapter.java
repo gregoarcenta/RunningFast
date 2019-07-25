@@ -10,12 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import facci.arcentales.runningfast.modelo.TiempoDistacia;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private List<String> historial;
+    private List<TiempoDistacia> historial;
     private int layout;
     private static OnItemClickListener onItemClickListener;
 
-    public MyAdapter (List<String> historial, int layout, OnItemClickListener listener){
+    public MyAdapter (List<TiempoDistacia> historial, int layout, OnItemClickListener listener){
         this.historial=historial;
         this.layout=layout;
         this.onItemClickListener=listener;
@@ -41,25 +43,28 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView tiempo_historial;
+        public TextView distancia_historial;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             this.tiempo_historial=(TextView) itemView.findViewById(R.id.tiempo_historial);
+            this.distancia_historial=(TextView) itemView.findViewById(R.id.distancia_historial);
         }
 
-        public void bind(final String tiempo, final OnItemClickListener listener){
-            this.tiempo_historial.setText(tiempo);
+        public void bind(final TiempoDistacia td, final OnItemClickListener listener){
+            tiempo_historial.setText(td.getTiempo());
+            distancia_historial.setText(td.getDistancia());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.OnItemClick(tiempo, getAdapterPosition());
+                    listener.OnItemClick(td, getAdapterPosition());
                 }
             });
 
         }
     }
     public interface OnItemClickListener{
-        void OnItemClick(String tiempo, int position);
+        void OnItemClick(TiempoDistacia td, int position);
 
     }
 }

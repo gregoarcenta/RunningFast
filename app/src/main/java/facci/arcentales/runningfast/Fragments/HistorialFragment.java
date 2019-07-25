@@ -23,6 +23,8 @@ import java.util.List;
 
 import facci.arcentales.runningfast.MyAdapter;
 import facci.arcentales.runningfast.R;
+import facci.arcentales.runningfast.SQL.sqliteopenhelper;
+import facci.arcentales.runningfast.modelo.TiempoDistacia;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,7 +38,7 @@ public class HistorialFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private  RecyclerView.LayoutManager layoutManager;
-    List<String> tiempoDistancia;
+    List<TiempoDistacia> tiempoDistancia;
     public HistorialFragment() {
     }
     @Override
@@ -45,19 +47,17 @@ public class HistorialFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_historial, container, false);
         showToolbar(getResources().getString(R.string.toolbar_historial),false, view);
 
-        preferences = getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE);
+        sqliteopenhelper helperbd = new sqliteopenhelper(getContext());
+        //preferences = getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE);
         vacia = (TextView)view.findViewById(R.id.txt_sinActividad);
-        tiempoDistancia = this.getAllTiempoDistancia();
-        if (!tiempoDistancia.isEmpty()){
+        if (!helperbd.mostrarTD().isEmpty()){
             vacia.setVisibility(view.INVISIBLE);
         }
         recyclerView = (RecyclerView)view.findViewById(R.id.recycler);
         layoutManager = new LinearLayoutManager(getContext());
-        //addTiempoDistancia();
-        adapter = new MyAdapter(tiempoDistancia, R.layout.cardview_historial, new MyAdapter.OnItemClickListener() {
+        MyAdapter adapter = new MyAdapter(helperbd.mostrarTD(), R.layout.cardview_historial, new MyAdapter.OnItemClickListener() {
             @Override
-            public void OnItemClick(String tiempo, int position) {
-
+            public void OnItemClick(TiempoDistacia td, int position) {
             }
         });
 
@@ -78,7 +78,7 @@ public class HistorialFragment extends Fragment {
          List<String> time = new ArrayList<>();
          //time.add(0,preferences.getString("tiempo", ""));
          return time;
-     }*/
+     }
     public List<String> getAllTiempoDistancia(){
         return new ArrayList<String>() {{
             //add("45:29");
@@ -89,5 +89,5 @@ public class HistorialFragment extends Fragment {
         tiempoDistancia.add(0,"45:56");
         adapter.notifyItemInserted(0);
         layoutManager.scrollToPosition(0);
-    }
+    }*/
 }

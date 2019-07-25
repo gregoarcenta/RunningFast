@@ -19,7 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class CorrerActivity extends AppCompatActivity {
 
     int i=10;
-    Chronometer chronometer;
+    Chronometer chronometer, dis;
     ImageView botonPause,botonStop,botonStart;
     boolean correr=false;
     long detenerse;
@@ -35,6 +35,7 @@ public class CorrerActivity extends AppCompatActivity {
 
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
         chronometer = (Chronometer)findViewById(R.id.conteo_tiempo);
+        dis = (Chronometer)findViewById(R.id.conteo_distancia);
         botonPause = (ImageView)findViewById(R.id.pausa);
         botonStop = (ImageView)findViewById(R.id.stop);
         botonStart = (ImageView)findViewById(R.id.start);
@@ -126,6 +127,7 @@ public class CorrerActivity extends AppCompatActivity {
                     Intent i = new Intent( CorrerActivity.this,ResultadosActivity.class);
                     Bundle b = new Bundle();
                     b.putString("tiempo",chronometer.getText().toString());
+                    b.putString("dis",dis.getText().toString());
                     i.putExtras(b);
                     SharedPreferences.Editor editor= preferences.edit();
                     editor.putString("tiempo", chronometer.getText().toString());

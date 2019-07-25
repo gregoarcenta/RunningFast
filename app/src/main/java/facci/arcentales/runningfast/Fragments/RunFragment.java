@@ -1,7 +1,9 @@
 package facci.arcentales.runningfast.Fragments;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,18 +11,18 @@ import android.os.Bundle;
 import androidx.core.content.SharedPreferencesCompat;
 import androidx.fragment.app.Fragment;
 
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Chronometer;
 
+import java.io.IOException;
+
 import facci.arcentales.runningfast.CorrerActivity;
 import facci.arcentales.runningfast.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class RunFragment extends Fragment {
 
     Button botonInicioConteo;
@@ -44,10 +46,33 @@ public class RunFragment extends Fragment {
         botonInicioConteo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CorrerActivity.class);
-                startActivity(intent);
+                try {
+                    int gpsSeñal = Settings.Secure.getInt(getActivity().getContentResolver(), Settings.Secure.LOCATION_MODE);
+                    if (gpsSeñal == 0){
+                        showInfoAlert();
+                    }else{
+                        Intent intent = new Intent(getActivity(), CorrerActivity.class);
+                        startActivity(intent);
+                    }
+                }catch (Settings.SettingNotFoundException e){
+                    e.printStackTrace();
+                }
             }
         });
         return view;
+    }
+    public void showInfoAlert (){
+        new AlertDialog.Builder(getContext())
+                .setTitle(" Señal GPS ")
+                .setMessage("Usted no tiene habilitada la señal GPS ¿Te gustaria activar la señal GPS ahora?")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("CANCELAR",null)
+                .show();
     }
 }
