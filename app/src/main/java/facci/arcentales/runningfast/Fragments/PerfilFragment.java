@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+
 import facci.arcentales.runningfast.R;
 
 /**
@@ -29,6 +31,7 @@ public class PerfilFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
         showToolbar("",false,view);
+
         return view;
     }
     public void showToolbar(String tittle, boolean button,View view){

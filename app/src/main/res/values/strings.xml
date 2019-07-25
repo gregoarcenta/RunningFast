@@ -28,4 +28,6 @@
     <string name="distancia_historial">Distancia</string>
     <string name="distanciaRecorrida_historial">Distancia recorrida</string>
     <string name="comenzar">Comenzar</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="Resultado">Resultados</string>
 </resources>

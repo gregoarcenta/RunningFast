@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/editText_registro"
-                android:layout_marginTop="@dimen/padding_5dp">
+                android:layout_marginTop="@dimen/padding_10dp">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editText_apellidos_r"
                     android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                 android:theme="@style/editText_registro"
                 app:counterMaxLength="15"
                 app:counterEnabled="true"
-                android:layout_marginTop="@dimen/padding_5dp">
+                android:layout_marginTop="@dimen/padding_10dp">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editText_usuario_r"
                     android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:theme="@style/editText_registro"
                 app:passwordToggleEnabled="true"
-                >
+                android:layout_marginTop="@dimen/padding_10dp">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editText_contraseña_r"
                     android:layout_width="match_parent"
@@ -104,7 +104,7 @@
                     android:textSize="15sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <!--<com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_comtraseña_conf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,21 +119,22 @@
                     android:hint="@string/editText_conf_contraseña"
                     android:inputType="textPassword"
                     android:textSize="15sp"/>
-            </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/textView_sexo"
                 android:textSize="15sp"
                 android:textColor="@color/primary_text"
-                android:layout_marginTop="@dimen/padding_5dp"/>
+                android:layout_marginTop="@dimen/padding_20dp"/>
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:theme="@style/editText_registro"
-                android:padding="5dp">
+                android:padding="5dp"
+                android:layout_marginTop="@dimen/padding_10dp">
                 <RadioButton
                     android:id="@+id/radio_masc"
                     android:layout_width="wrap_content"
@@ -152,7 +153,7 @@
                 android:layout_height="60dp"
                 android:text="@string/boton_guardar_registro"
                 android:theme="@style/RicesButom"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="70dp"
                 android:onClick="iniciarSesionRegistro"/>
 
         </LinearLayout>

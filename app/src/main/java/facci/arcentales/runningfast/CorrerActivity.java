@@ -123,6 +123,10 @@ public class CorrerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!correr) {
+                    Intent i = new Intent( CorrerActivity.this,ResultadosActivity.class);
+                    Bundle b = new Bundle();
+                    b.putString("tiempo",chronometer.getText().toString());
+                    i.putExtras(b);
                     SharedPreferences.Editor editor= preferences.edit();
                     editor.putString("tiempo", chronometer.getText().toString());
                     editor.commit();
@@ -130,6 +134,7 @@ public class CorrerActivity extends AppCompatActivity {
                     chronometer.stop();
                     detenerse = 0;
                     correr = false;
+                    startActivity(i);
                 }
             }
         });

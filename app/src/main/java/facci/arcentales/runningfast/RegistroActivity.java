@@ -36,8 +36,6 @@ public class RegistroActivity extends AppCompatActivity {
         emailin = (TextInputLayout) findViewById(R.id.input_email);
         contraseña = (EditText) findViewById(R.id.editText_contraseña_r);
         contraseñain = (TextInputLayout) findViewById(R.id.input_contraseña);
-        conf_contraseña = (EditText) findViewById(R.id.editText_contraseña_conf);
-        conf_contraseñain = (TextInputLayout) findViewById(R.id.input_comtraseña_conf);
         masc = (RadioButton) findViewById(R.id.radio_masc);
         fem = (RadioButton) findViewById(R.id.radio_fem);
     }
@@ -54,7 +52,7 @@ public class RegistroActivity extends AppCompatActivity {
         String usuario_reg = usuario.getText().toString();
         String email_reg = email.getText().toString();
         String contraseña_reg = contraseña.getText().toString();
-        String contraseña_conf = conf_contraseña.getText().toString();
+        //String contraseña_conf = conf_contraseña.getText().toString();
         if (nombre_reg.isEmpty()) {
             nombrein.setError("Ingrese un nombre");
             return false;
@@ -78,10 +76,10 @@ public class RegistroActivity extends AppCompatActivity {
             contraseñain.setError("Ingrese una contraseña");
             return false;
         }
-        if (contraseña_conf.isEmpty()) {
+        /*if (contraseña_conf.isEmpty()) {
             conf_contraseñain.setError("Confirme su contraseña");
             return false;
-        }
+        }*/
         if (masc.isChecked()==false){
             masc.setError("");
             if (fem.isChecked()==false){
