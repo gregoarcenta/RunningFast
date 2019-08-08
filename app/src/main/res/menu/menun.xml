@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/historial"
+        android:title="Historial"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/historial_full">
+    </item>
+    <item
+        android:id="@+id/run"
+        android:title="Correr"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/run_full"
+        >
+    </item>
+    <item
+        android:id="@+id/perfil"
+        android:title="Perfil"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/prefil">
+    </item>
+</menu>

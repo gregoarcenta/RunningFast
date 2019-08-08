@@ -1,8 +1,5 @@
 package facci.arcentales.runningfast.Fragments;
 
-
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,12 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import facci.arcentales.runningfast.MyAdapter;
@@ -32,7 +30,6 @@ import facci.arcentales.runningfast.modelo.TiempoDistacia;
 public class HistorialFragment extends Fragment {
     int con = 0;
     private int counter=0;
-    SharedPreferences preferences;
     private TextView vacia;
     private Button botonAgregar;
     private RecyclerView recyclerView;
@@ -46,9 +43,9 @@ public class HistorialFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_historial, container, false);
         showToolbar(getResources().getString(R.string.toolbar_historial),false, view);
+        setHasOptionsMenu(true);
 
         sqliteopenhelper helperbd = new sqliteopenhelper(getContext());
-        //preferences = getActivity().getSharedPreferences("preferences", Context.MODE_PRIVATE);
         vacia = (TextView)view.findViewById(R.id.txt_sinActividad);
         if (!helperbd.mostrarTD().isEmpty()){
             vacia.setVisibility(view.INVISIBLE);
@@ -74,20 +71,10 @@ public class HistorialFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(tittle);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(button);
     }
-    /* public List<String>tiempoDistancia(){
-         List<String> time = new ArrayList<>();
-         //time.add(0,preferences.getString("tiempo", ""));
-         return time;
-     }
-    public List<String> getAllTiempoDistancia(){
-        return new ArrayList<String>() {{
-            //add("45:29");
-            add(preferences.getString("tiempo", ""));
-        }};
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menun, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
-    public void addTiempoDistancia(){
-        tiempoDistancia.add(0,"45:56");
-        adapter.notifyItemInserted(0);
-        layoutManager.scrollToPosition(0);
-    }*/
 }
